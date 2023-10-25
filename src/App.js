@@ -3,7 +3,7 @@ import AddTooForm from './AddTodoForm';
 import TodoList from './TodoList';
 
 function App() {
-  const [newTodo, setNewTodo] = useState();
+  const [newTodo, setNewTodo] = useState("");
   return (
     <div>
       <h1>Todo List</h1>
