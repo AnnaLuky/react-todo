@@ -4,11 +4,11 @@ import TodoList from './TodoList';
 
 function App() {
 
-
+  
   const [todoList, setTodoList] = useState([]);
 
   function addTodo(newTodo) {
-    setTodoList([...todoList, { title: newTodo, id: Date.now() }]);
+    setTodoList([...todoList, newTodo]);
   }
 
   return (

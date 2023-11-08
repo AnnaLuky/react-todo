@@ -5,8 +5,8 @@ import TodoListItem from "./TodoListItem";
 function TodoList({ todoList }) {
   return (
     <ul>
-      {todoList.map(function (toDoListElement) {
-        return (<TodoListItem key={toDoListElement.id} todo={toDoListElement} />);
+      {todoList.map(function (toDoListItem) {
+        return (<TodoListItem key={toDoListItem.id} todo={toDoListItem} />);
       })}
     </ul>
   );
