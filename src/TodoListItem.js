@@ -2,12 +2,12 @@ import React from "react";
 
 function TodoListItem({ todo, onRemoveTodo }) {
 
-    function onClick(){
+    function onClickRemove(){
         onRemoveTodo(todo.id);
     }
 
     return (
-        <li>{todo.title} <button onClick={onClick}>Remove</button></li>
+        <li>{todo.title} <button type="button" onClick={onClickRemove}>Remove</button></li>
     );
 }
 
