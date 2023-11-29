@@ -8,17 +8,23 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(function () {
-    new Promise(function (resolve, reject) {
-      setTimeout(function () { resolve({ data: { todoList: JSON.parse(localStorage.getItem("savedTodoList")) || [] } }); }, 2000);
-    }).then(function (result) {
+  useEffect(() => {
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          data: {
+            todoList: JSON.parse(localStorage.getItem("savedTodoList")) || []
+          }
+        });
+      }, 2000);
+    }).then((result) => {
       setTodoList(result.data.todoList);
       setIsLoading(false);
     });
 
   }, []);
 
-  useEffect(function () {
+  useEffect(() => {
     if (!isLoading) {
       localStorage.setItem("savedTodoList", JSON.stringify(todoList));
     }
@@ -30,7 +36,7 @@ function App() {
   }
 
   function removeTodo(id) {
-    const newTodoList = todoList.filter(function (todo) { return todo.id !== id; });
+    const newTodoList = todoList.filter((todo) => { return todo.id !== id; });
     setTodoList(newTodoList);
   }
 
